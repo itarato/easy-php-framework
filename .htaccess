@@ -1,11 +1,31 @@
+
+# Don't show directory listings for URLs which map to a directory.
+Options -Indexes
+
+# Follow symbolic links in this directory.
+Options +FollowSymLinks
+
+#ErrorDocument 404 /index.php
+
+# Set the default handler.
+DirectoryIndex index.php
+
+# Various rewrite rules.
 <IfModule mod_rewrite.c>
+	RewriteEngine On
 
-RewriteEngine On
+	RewriteCond %{REQUEST_URI} public.*
+	RewriteRule public/(.*)$ public/$1 [NC,L,QSA]
 
-RewriteRule ^easyframework02/public(.*)$ easyframework02/public$1 [NC,L,QSA]
-RewriteRule ^easyframework02/([a-z]*)/([a-z]*)/([\d]+)/?.*$ easyframework02/public/index.php?controller=$1&action=$2&id=$3 [NC,L,QSA]
-RewriteRule ^easyframework02/([a-z]*)/([a-z]*)/?.*$ easyframework02/public/index.php?controller=$1&action=$2 [NC,L,QSA]
-RewriteRule ^easyframework02/([a-z]*)/?.*$ easyframework02/public/index.php?controller=$1 [NC,L,QSA]
-RewriteRule ^easyframework02/?.*$ easyframework02/public/index.php [NC,L,QSA]
+	RewriteCond %{REQUEST_URI} [a-z0-9_]+/[a-z0-9_]+/[a-z0-9_]+(\?|/){0,1}.*
+	RewriteRule ([a-z0-9_]+)/([a-z0-9_]+)/([a-z0-9_]+)(\?|/){0,1}.*$ public/index.php?controller=$1&action=$2&id=$3 [NC,L,QSA]
 
+	RewriteCond %{REQUEST_URI} [a-z0-9_]/[a-z0-9_](\?|/){0,1}.*
+	RewriteRule ([a-z0-9_]+)/([a-z0-9_]+)(\?|/){0,1}(.*)$ public/index.php?controller=$1&action=$2 [NC,L,QSA]
+
+	RewriteCond %{REQUEST_URI} [a-z0-9_]+(\?|/){0,1}.*
+	RewriteRule ([a-z0-9_]+)(\?|/){0,1}(.*)$ public/index.php?controller=$1 [NC,L,QSA]
+
+	RewriteCond	%{REQUEST_URI}	.*
+	RewriteRule ^.*$ public/index.php [NC,L,QSA]
 </IfModule>
