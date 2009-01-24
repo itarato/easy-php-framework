@@ -1,0 +1,32 @@
+<? if (!empty($error)): ?>
+	<div class="dialog-error">
+		<table>
+			<tr>
+				<td><?= imgTag('/tango/dialog-error.png') ?></td>
+				<td><?= $error ?></td>
+			</tr>
+		</table>
+	</div>
+<? endif; ?>
+
+<? if (!empty($warning)): ?>
+	<div class="dialog-warning">
+		<table>
+			<tr>
+				<td><?= imgTag('/tango/dialog-warning.png') ?></td>
+				<td><?= $warning ?></td>
+			</tr>
+		</table>
+	</div>
+<? endif; ?>
+
+<? if (!empty($notice)): ?>
+	<div class="dialog-notice">
+		<table>
+			<tr>
+				<td><?= imgTag('/tango/dialog-information.png') ?></td>
+				<td><?= $notice ?></td>
+			</tr>
+		</table>
+	</div>
+<? endif; ?>

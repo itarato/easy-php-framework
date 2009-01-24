@@ -1,0 +1,11 @@
+<IfModule mod_rewrite.c>
+
+RewriteEngine On
+
+RewriteRule ^easyframework02/public(.*)$ easyframework02/public$1 [NC,L,QSA]
+RewriteRule ^easyframework02/([a-z]*)/([a-z]*)/([\d]+)/?.*$ easyframework02/public/index.php?controller=$1&action=$2&id=$3 [NC,L,QSA]
+RewriteRule ^easyframework02/([a-z]*)/([a-z]*)/?.*$ easyframework02/public/index.php?controller=$1&action=$2 [NC,L,QSA]
+RewriteRule ^easyframework02/([a-z]*)/?.*$ easyframework02/public/index.php?controller=$1 [NC,L,QSA]
+RewriteRule ^easyframework02/?.*$ easyframework02/public/index.php [NC,L,QSA]
+
+</IfModule>

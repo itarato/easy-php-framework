@@ -1,0 +1,15 @@
+<div align="left">
+	<pre style="line-height:120%;background:#555;color:#F4FFC7;font-size:12px;padding:10px;margin:30px;">
+== DEBUG ==
+
+== SESSION ==
+<? var_dump($_SESSION) ?>
+
+== GET ==
+<? var_dump($_GET) ?>
+
+== POST ==
+<? var_dump($_POST) ?>
+
+	</pre>
+</div>

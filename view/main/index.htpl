@@ -1,0 +1,3 @@
+<h1>Welcome in EasyFramework</h1>
+
+<h3>Variable from controller: [<?= $some_var ?>]</h3>
