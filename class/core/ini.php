@@ -18,6 +18,7 @@ foreach ((array)$include_path_array as $path) {
 
 // Framework directory
 define('BASE_PATH', dirname(__FILE__).DIRECTORY_SEPARATOR.'..'.DIRECTORY_SEPARATOR.'..');
+define('HTML_PATH', preg_replace("/^(\/[a-zA-Z0-9_-]+){0,1}\/public\/.*$/", "$1", $_SERVER['SCRIPT_NAME']));
 
 
 // Setup doctrine, and database connection

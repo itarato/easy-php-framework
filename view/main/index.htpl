@@ -1,3 +1,11 @@
-<h1>Welcome in EasyFramework</h1>
+<h1>Welcome in Easy PHP Framework</h1>
 
-<h3>Variable from controller: [<?= $some_var ?>]</h3>
+<p>
+If you can see this page means that it works. 
+For more information visit <a href="http://www.bison.hu">http://www.bison.hu</a>.
+</p>
+
+<p>
+Variable from controller: x = <?= $foo ?><br />
+To see some debug var, set DEBUG_MODE to TRUE in /setup.php.
+</p>

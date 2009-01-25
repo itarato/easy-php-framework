@@ -5,16 +5,79 @@
  * PAGE
  */
 body {
+	font-family: Tahoma, Arial, Helvetica;
+	color: #333;
+	background: #eee;
 }
 
-body, html {
-	font-family: Helvetica, Arial, Sans;
+h1, h2, h3 {
+	font-family: Arial;
+	font-weight: 100;
+	color: #fff;
 }
 
+div#page {
+	width: 900px;
+	margin: auto;
+	-moz-border-radius:	12px;
+	-webkit-border-radius: 12px;
+	background: #333;
+	color: #aaa;
+}
+
+div#page a {
+	color: #bad367;
+}
+
+div#menu {
+	height: 30px;
+	-moz-border-radius:	6px;
+	-webkit-border-radius: 6px;
+	border: 1px solid #2a2a2a;
+	background: #bad367;
+	margin: 6px;
+	padding: 1px;
+}
+
+div#menu ul {
+	padding: 0;
+	margin: 5px 0 0 12px;
+}
+
+div#menu li {
+	list-style-type: none;
+	list-style: none;
+	text-decoration: none;
+	float: left;
+	padding: 0px;
+	margin: 0px;
+}
+
+div#menu a {
+	text-decoration: none;
+	color: #333;
+	font-weight: bold;
+	padding: 0 6px 0 6px;
+}
+
+div#content {
+	padding: 12px;
+}
+
+div#footer {
+	-moz-border-radius:	12px;
+	-webkit-border-radius: 12px;
+	margin: 2px;
+	padding:24px;
+	background: #404040;
+	text-align: center;
+	font-size: 10px;
+}
 
 div.dialog-error, div.dialog-warning, div.dialog-notice {
 	margin: 0 10px 10px 10px;
 	padding: 6px;
+	color: #333;
 }
 
 div.dialog-error td, div.dialog-warning td, div.dialog-notice td {

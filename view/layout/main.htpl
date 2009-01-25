@@ -3,23 +3,38 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Langmates</title>
+<title>Easy PHP Framework</title>
 <?= cssInclude('/main.css') ?>
 <?= javascriptInclude('/main.js') ?>
 </head>
 <body>
 
-<h1>Easy Framework 0.2</h1>
+<div id="page">
+	<?= imgTag('logo.png', array('style' => 'margin: 6px 0 6px 12px;')) ?>
+	
+	<div id="menu">
+		<ul>
+			<li><a href="<?= linkTo('/') ?>">Home</a></li>
+			<li>|</li>
+			<li><a href="http://www.bison.hu">Project page</a></li>
+		</ul>
+	</div>
+	
+	<div id="content">
+		<? include(BASE_PATH.'/view/messages.htpl'); ?>
+	
+		[[CONTENT]]		
+		
+		<? if (DEBUG_MODE): ?>
+			<? include(BASE_PATH.'/view/debug.htpl'); ?>
+		<? endif; ?>
+	</div>
+	
+	<div id="footer">
+		2009 | Easy Framework | Free
+	</div>
+</div>
 
-<? include(BASE_PATH.'/view/messages.htpl'); ?>
-
-[[CONTENT]]
-
-<hr />
-
-<? if (DEBUG_MODE): ?>
-	<? include(BASE_PATH.'/view/debug.htpl'); ?>
-<? endif; ?>
 
 </body>
 </html>

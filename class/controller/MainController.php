@@ -16,8 +16,8 @@ class MainController extends Controller {
 	 */	
 	
 	public function index() {
-		$this->some_var = 'Let\'s code!';
-		$this->notice = 'It\'s a simple notice. There are notice/warning/error here.';		 
+		$this->foo = 'bar';
+		$this->notice = 'Hurray! It works. Let\'s get some beer...'';		 
 	}
 }
 

@@ -1,10 +1,8 @@
 <?php
 
-
 define('DEFAULT_CONTROLLER', "main");
 define('DEFAULT_ACTION', "index");
-define('HTML_PATH', '/ef_t2');
-define('DEBUG_MODE', TRUE);
+define('DEBUG_MODE', FALSE);
 
 define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');

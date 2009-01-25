@@ -91,7 +91,8 @@ function iTextArea($name, $value=NULL, $options=NULL) {
 
 /**
  * Load template
- *
+ * 
+ * @DEPRECATED - maybe not the best for templates that need php variables
  * @param String $path
  */
 function view($path) {
