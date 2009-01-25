@@ -4,17 +4,19 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Easy PHP Framework</title>
-<?= cssInclude('/main.css') ?>
-<?= javascriptInclude('/main.js') ?>
+<?= css('/main.css') ?>
+<?= js('/main.js') ?>
 </head>
 <body>
 
 <div id="page">
-	<?= imgTag('logo.png', array('style' => 'margin: 6px 0 6px 12px;')) ?>
+	<?= img('logo.png', array('style' => 'margin: 6px 0 6px 12px;')) ?>
 	
 	<div id="menu">
 		<ul>
-			<li><a href="<?= linkTo('/') ?>">Home</a></li>
+			<li><?= a('Home', '/') ?></li>
+			<li>|</li>
+			<li><?= a('Example page', '/main/example') ?></li>
 			<li>|</li>
 			<li><a href="http://www.bison.hu">Project page</a></li>
 		</ul>

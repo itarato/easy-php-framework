@@ -5,8 +5,6 @@ Options -Indexes
 # Follow symbolic links in this directory.
 Options +FollowSymLinks
 
-#ErrorDocument 404 /index.php
-
 # Set the default handler.
 DirectoryIndex index.php
 

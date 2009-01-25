@@ -2,13 +2,13 @@
 	
 
 /**
- * Get a css include string
+ * Get a css include html tag
  *
- * @param string $css file name (without .css)
+ * @param string $css file name located in /public/css/___.css
  * @param string $media
  * @return string <link ... />
  */
-function cssInclude($css, $media=NULL) {
+function css($css, $media=NULL) {
 	return '<link rel="stylesheet" '.(empty($media)?'':('media="'.$media.'"')).' href="'.HTML_PATH.'/public/css'.$css.'" type="text/css" />';
 }
 
@@ -18,7 +18,7 @@ function cssInclude($css, $media=NULL) {
  * @param String $file file name
  * @return String <... />
  */
-function javascriptInclude($file) {
+function js($file) {
 	return '<script type="text/javascript" src="'.HTML_PATH.'/public/js'.$file.'"></script>'."\n";
 }
 
@@ -29,8 +29,8 @@ function javascriptInclude($file) {
  * @param Array $options html options
  * @return unknown
  */
-function imgTag($file, $options=NULL) {	
-	return '<img src="'.HTML_PATH.'/public/images/'.$file.'" '.kv2HtmlOptions($options).'/>';
+function img($file, $options=NULL) {	
+	return '<img src="'.HTML_PATH.'/public/images/'.$file.'" '.key_value_to_html_attribute($options).'/>';
 }
 
 /**
@@ -40,63 +40,72 @@ function imgTag($file, $options=NULL) {
  * @param String $url
  * @return String
  */
-function linkTo($url) {
-	return HTML_PATH.$url;
+function link($url) {
+	if (in_array(substr($url, 0, 4), array('www.', 'http'))) {
+		// Absolute url
+		return $url;
+	} else {
+		// Relative url
+		return HTML_PATH.$url;
+	}
 }
 
-function inputField($type, $name, $value=NULL, $options=NULL) {
-	return '<input type="'.$type.'" name="'.$name.'" value="'.$value.'" '.kv2HtmlOptions($options).'/>';
+function a($text, $link, $options=NULL) {
+	return '<a href="'.link($link).'" '.key_value_to_html_attribute($options).'>'.$text.'</a>';
 }
 
-function iText($name, $value=NULL, $options=NULL) {
-	return inputField('text', $name, $value, $options);
+function input($type, $name, $value=NULL, $options=NULL) {
+	return '<input type="'.$type.'" name="'.$name.'" value="'.$value.'" '.key_value_to_html_attribute($options).'/>';
 }
 
-function iCheckbox($name, $value=NULL, $options=NULL) {
-	return inputField('checkbox', $name, $value, $options);
+function textfield($name, $value=NULL, $options=NULL) {
+	return input('text', $name, $value, $options);
 }
 
-function iHidden($name, $value=NULL) {
-	return inputField('hidden', $name, $value);
+function checkbox($name, $value=NULL, $options=NULL) {
+	return input('checkbox', $name, $value, $options);
 }
 
-function iFile($name) {
+function hidden($name, $value=NULL) {
+	return input('hidden', $name, $value);
+}
+
+function file_upload($name) {
 	return '<input name="'.$name.'" type="file" />';
 }
 
-function iPassword($name, $value=NULL, $options=NULL) {
-	return inputField('password', $name, $value, $options);
+function password($name, $value=NULL, $options=NULL) {
+	return input('password', $name, $value, $options);
 }
 
-function iButton($value, $options=NULL) {
-	return '<button '.kv2HtmlOptions($options).'>'.$value.'</button>';
+function button($value, $options=NULL) {
+	return '<button '.key_value_to_html_attribute($options).'>'.$value.'</button>';
 }
 
-function iSubmit($value=NULL) {
-	return iButton(imgTag('/silk/disk.png').'&nbsp;&nbsp;<strong>'.$value.'</strong>', array('type' => 'submit'));
+function submit_button($value=NULL, $img='/silk/disk.png') {
+	return button(
+		(empty($img) ? '' : img($img).'&nbsp;&nbsp;').'<strong>'.$value.'</strong>', 
+		array('type' => 'submit')
+	);
 }
 
-function iReset($value=NULL) {
-	return iButton(imgTag('/silk/page_refresh.png').'&nbsp;&nbsp;'.$value, array('type' => 'reset'));
+function reset_button($value=NULL, $img='/silk/page_refresh.png') {
+	return button(
+		(empty($img) ? '' : img($img).'&nbsp;&nbsp;').'&nbsp;&nbsp;'.$value, 
+		array('type' => 'reset')
+	);
 }
 
-function iButtonLink($value=NULL, $link=NULL) {
-	return iButton(imgTag('/silk/door_in.png').'&nbsp;&nbsp;'.$value, 
-		array('type' => 'button', 'onclick' => 'window.location.href=\''.$link.'\';'));
+function link_button($value=NULL, $link=NULL, $img='/silk/door_in.png') {
+	return button(
+		(empty($img) ? '' : img($img).'&nbsp;&nbsp;').$value, 
+		array('type' => 'button', 'onclick' => 'window.location.href=\''.link($link).'\';')
+	);
 }
 
-function iTextArea($name, $value=NULL, $options=NULL) {
-	return '<textarea name="'.$name.'" '.kv2HtmlOptions($options).' >'.$value.'</textarea>';
+function textarea($name, $value=NULL, $options=NULL) {
+	return '<textarea name="'.$name.'" '.key_value_to_html_attribute($options).' >'.$value.'</textarea>';
 }
 
-/**
- * Load template
- * 
- * @DEPRECATED - maybe not the best for templates that need php variables
- * @param String $path
- */
-function view($path) {
-	include BASE_PATH.'/view'.$path;
-}
 
 ?>

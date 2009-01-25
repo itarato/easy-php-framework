@@ -2,7 +2,7 @@
 
 define('DEFAULT_CONTROLLER', "main");
 define('DEFAULT_ACTION', "index");
-define('DEBUG_MODE', FALSE);
+define('DEBUG_MODE', FALSE || $_GET['debug'] == 'on');
 
 define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');

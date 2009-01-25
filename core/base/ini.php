@@ -2,13 +2,13 @@
 
 // Directories, where classes are, and need to autoload
 $include_path_array = array(
-	'../class/core', // Core classes
-	'../class/model', // Web model classes
-	'../class/controller', // Web controller classes
-	'../class/lib', // Additional classes, e.g.: Doctrine, and your own classes
-	'../class/lib/Doctrine/lib/Doctrine', // Doctrine
-	'../class/dbdata', // Doctrine
-	'../class/dbdata/generated' // Doctrine
+	'../core/base', // Core classes
+	'../model', // Web model classes
+	'../controller', // Web controller classes
+	'../core/extra', // Additional classes, e.g.: Doctrine, and your own classes
+	'../core/extra/Doctrine/lib/Doctrine', // Doctrine
+	'../core/dbdata', // Doctrine
+	'../core/dbdata/generated' // Doctrine
 ); 
 // Save class directories 
 foreach ((array)$include_path_array as $path) {
@@ -22,7 +22,7 @@ define('HTML_PATH', preg_replace("/^(\/[a-zA-Z0-9_-]+){0,1}\/public\/.*$/", "$1"
 
 
 // Setup doctrine, and database connection
-require_once(BASE_PATH.'/class/lib/Doctrine/lib/Doctrine.php');
+require_once(BASE_PATH.'/core/extra/Doctrine/lib/Doctrine.php');
 Doctrine_Manager::connection(DB_TYPE.'://'.DB_USER.':'.DB_PASS.'@'.DB_HOST.'/'.DB_NAME);
 
 

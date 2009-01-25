@@ -8,8 +8,8 @@ Step 1:
  
 Step 2:
  - get Doctrine: http://www.doctrine-project.org/
- - copy to ef_project_1/class/lib/Doctrine, so you can find Doctrine.php at
-   ef_project_1/class/lib/Doctrine/lib/Doctrine.php
+ - copy to ef_project_1/core/extra/Doctrine, so you can find Doctrine.php at
+   ef_project_1/core/extra/Doctrine/lib/Doctrine.php
  
 Step 3:
  - create a database

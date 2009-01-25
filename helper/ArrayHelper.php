@@ -1,6 +1,12 @@
 <?php
 
-function kv2HtmlOptions($options) {
+/**
+ * Make html attributes from an array
+ * 
+ * @param array $options
+ * @return string
+ */
+function key_value_to_html_attribute($options) {
 	if (empty($options)) {
 		return '';
 	}
@@ -8,17 +14,6 @@ function kv2HtmlOptions($options) {
 	$out = ' ';
 	foreach ((array)$options as $k => $v) {
 		$out .= $k.'="'.$v.'" ';
-	}
-	
-	return $out;
-}
-
-function arrayDeleteIndex($idx, $array) {
-	$out = array();
-	foreach ((array)$array as $k => $v) {
-		if ($k != $idx) {
-			$out[$k] = $v;
-		}
 	}
 	
 	return $out;

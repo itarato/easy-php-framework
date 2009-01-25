@@ -2,7 +2,7 @@
 	<div class="dialog-error">
 		<table>
 			<tr>
-				<td><?= imgTag('/tango/dialog-error.png') ?></td>
+				<td><?= img('/tango/dialog-error.png') ?></td>
 				<td><?= $error ?></td>
 			</tr>
 		</table>
@@ -13,7 +13,7 @@
 	<div class="dialog-warning">
 		<table>
 			<tr>
-				<td><?= imgTag('/tango/dialog-warning.png') ?></td>
+				<td><?= img('/tango/dialog-warning.png') ?></td>
 				<td><?= $warning ?></td>
 			</tr>
 		</table>
@@ -24,7 +24,7 @@
 	<div class="dialog-notice">
 		<table>
 			<tr>
-				<td><?= imgTag('/tango/dialog-information.png') ?></td>
+				<td><?= img('/tango/dialog-information.png') ?></td>
 				<td><?= $notice ?></td>
 			</tr>
 		</table>

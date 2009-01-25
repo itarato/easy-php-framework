@@ -5,7 +5,7 @@ define('DATE_TIME_HU', 1);
 define('DATE_HU', 2);
 define('DATE_SQL', 3);
 
-function dateTo($date, $date_type) {
+function date_to($date, $date_type) {
 	if (empty($date)) {
 		return '';
 	}
@@ -25,7 +25,7 @@ function dateTo($date, $date_type) {
 	}
 }
 
-function isEmail($email) {
+function is_email($email) {
 	if (preg_match("/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/", $email)) {
 		return TRUE;
 	}
@@ -33,11 +33,11 @@ function isEmail($email) {
 	return FALSE;
 }
 
-function saltedPassword($password, $salt) {
+function salted_password($password, $salt) {
 	return crypt($password, $salt);
 }
 
-function getSalt($length=8) {
+function get_salt($length=8) {
 	$misc = '0123456789abcdefghijklmnopqrstuvwxyz';
 	$salt = '';
 	for ($i = 0; $i < $length; $i++) {

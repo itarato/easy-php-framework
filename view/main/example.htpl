@@ -1,0 +1,21 @@
+<p>
+This is an example page.
+</p>
+
+<p><?= a('Link here <strong>with</strong> an ID in GET', '/main/example/123') ?></p>
+
+<p><?= a('Link here <strong>without</strong> an ID in GET', '/main/example') ?></p>
+
+<p><?= a('Link here <strong>with</strong> an ID in GET and enable debug mode', '/main/example/foo_123?a=1&debug=on') ?></p>
+
+<h2>HMTL tag helper examples</h2>
+<small>Notice: form data comes from UserModel via controller</small>
+
+<p>
+Name<br />
+<?= textfield('name', $user->name) ?><br />
+Bio<br />
+<?= textarea('bio', $user->bio, array('style' => 'width: 200px; height: 200px;')) ?><br />
+<?= submit_button('Registrate') ?>
+<?= link_button('Go home', '/') ?>
+</p>
