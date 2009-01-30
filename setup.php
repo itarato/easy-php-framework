@@ -4,6 +4,8 @@ define('DEFAULT_CONTROLLER', "main");
 define('DEFAULT_ACTION', "index");
 define('DEBUG_MODE', FALSE || $_GET['debug'] == 'on');
 
+// Change it to TRUE if you use database transaction
+define('DB_REQUIRE', FALSE);
 define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
