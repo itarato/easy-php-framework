@@ -40,7 +40,7 @@ function img($file, $options=NULL) {
  * @param String $url
  * @return String
  */
-function link($url) {
+function link_to($url) {
 	if (in_array(substr($url, 0, 4), array('www.', 'http'))) {
 		// Absolute url
 		return $url;
@@ -51,7 +51,7 @@ function link($url) {
 }
 
 function a($text, $link, $options=NULL) {
-	return '<a href="'.link($link).'" '.key_value_to_html_attribute($options).'>'.$text.'</a>';
+	return '<a href="'.link_to($link).'" '.key_value_to_html_attribute($options).'>'.$text.'</a>';
 }
 
 function input($type, $name, $value=NULL, $options=NULL) {
@@ -99,7 +99,7 @@ function reset_button($value=NULL, $img='/silk/page_refresh.png') {
 function link_button($value=NULL, $link=NULL, $img='/silk/door_in.png') {
 	return button(
 		(empty($img) ? '' : img($img).'&nbsp;&nbsp;').$value, 
-		array('type' => 'button', 'onclick' => 'window.location.href=\''.link($link).'\';')
+		array('type' => 'button', 'onclick' => 'window.location.href=\''.link_to($link).'\';')
 	);
 }
 
