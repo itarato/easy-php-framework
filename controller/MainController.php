@@ -35,12 +35,12 @@ class MainController extends Controller {
 	
 	public function index() {
 		$this->foo = 'bar';
-		$this->notice = 'Hurray! It works. Let\'s get some beer...';		 
+		$this->notice = 'Hurray! It works. Let\'s get some beer...';	
 	}
 	
 	public function example() {
 		$this->user = UserModel::getUserData($_GET['id']);		
-		empty($this->user) ? 
+		empty($this->user->name) ? 
 			$this->warning = 'I can\' see any ID parameter in the URL:(' :
 			$this->notice = 'Great, I\'ve got an ID: '.$_GET['id'];
 			

@@ -12,6 +12,10 @@ class UserModel extends Model {
 		if (empty($uid)) return NULL;
 		
 		$user = new stdClass();
+		/* How db supposed to use
+		$users = db_query('SELECT * FROM users WHERE id = %d;', $uid);
+		$user = $users[0];
+		 */
 		$user->name = 'John The Great';
 		$user->bio = 'I\'m an ordinary guy. I eat, sleep and walk.';
 		return $user;

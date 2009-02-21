@@ -32,10 +32,15 @@ function _db_close() {
 
 function db_query($query) {
 	$query = trim($query);
+	
+	if (func_num_args() > 1) {
+		$params = func_get_args();
+		array_shift($params);
+	} 
 
 	switch (DB_TYPE) {
 	case 'mysql':
-		return _mysql_query($query);
+		return _mysql_query($query, $params);
 	}
 }
 

@@ -1,15 +1,8 @@
 How to setup Easy PHP Framework (EPF)
 
 Step 1:
- - download from http://www.bison.hu
- - or
- - clone from github: git://github.com/itarato/easy-php-framework.git
- - copy it to a folder at your webroot, like /var/www/ef_project_1/
- 
-Step 2:
- - get Doctrine: http://www.doctrine-project.org/
- - copy to ef_project_1/core/extra/Doctrine, so you can find Doctrine.php at
-   ef_project_1/core/extra/Doctrine/lib/Doctrine.php
+ - # cd [to your folder at your webroot, like /var/www/]
+ - # git clone git://github.com/itarato/easy-php-framework.git
  
 Step 3:
  - create a database
@@ -18,17 +11,15 @@ Step 4:
  - customize your database settings in setup.php at project root
  
 Step 5:
- - make sure rewrite_mod enabled by apache2
+ - make sure rewrite_mod enabled by apache2 (eg rewrite.load & AllowOverride All)
  
 Step 6:
- - write your browsers search bar: localhost/ef_project_1/
- 
+ - write your browsers search bar: localhost/easy-php-framework/
  
 Requirements:
  - apache 2
  - php 5.2
- - php pdo
- - mysql 5 / postgresql 8 / sqlite 2 ...
+ - mysql 5
  
 More details at http://www.bison.hu
 

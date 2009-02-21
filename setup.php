@@ -2,15 +2,15 @@
 
 define('DEFAULT_CONTROLLER', "main");
 define('DEFAULT_ACTION', "index");
-define('DEBUG_MODE', FALSE || $_GET['debug'] == 'on');
+define('DEBUG_MODE', TRUE || $_GET['debug'] == 'on');
 
 // Change it to TRUE if you use database transaction
-define('DB_REQUIRE', FALSE);
+define('DB_REQUIRE', TRUE);
 define('DB_TYPE', 'mysql');
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASS', 'your_code');
-define('DB_NAME', 'your_database_name');
+define('DB_USER', 'johndoe');
+define('DB_PASS', '');
+define('DB_NAME', 'epf');
 
 /**
  * Helper function collection helps you to deal with those
