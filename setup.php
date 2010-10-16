@@ -6,10 +6,10 @@ define('DEBUG_MODE', TRUE || $_GET['debug'] == 'on');
 
 // Change it to TRUE if you use database transaction
 define('DB_REQUIRE', TRUE);
-define('DB_TYPE', 'mysql');
+define('DB_TYPE', 'mysqli');
 define('DB_HOST', 'localhost');
-define('DB_USER', 'johndoe');
-define('DB_PASS', '');
+define('DB_USER', 'root');
+define('DB_PASS', 'root');
 define('DB_NAME', 'epf');
 
 /**
@@ -20,4 +20,3 @@ define('DB_NAME', 'epf');
  * e.g.: $helpers = array('Array', 'Html', 'String');
  */
 $helpers = array('Array', 'Html', 'String');
-?>

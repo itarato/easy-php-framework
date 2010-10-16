@@ -1,32 +1,32 @@
-<? if (!empty($error)): ?>
+<?php if (!empty($error)): ?>
 	<div class="dialog-error">
 		<table>
 			<tr>
-				<td><?= img('/tango/dialog-error.png') ?></td>
-				<td><?= $error ?></td>
+				<td><?php echo img('/tango/dialog-error.png'); ?></td>
+				<td><?php echo $error; ?></td>
 			</tr>
 		</table>
 	</div>
-<? endif; ?>
+<?php endif; ?>
 
-<? if (!empty($warning)): ?>
+<?php if (!empty($warning)): ?>
 	<div class="dialog-warning">
 		<table>
 			<tr>
-				<td><?= img('/tango/dialog-warning.png') ?></td>
-				<td><?= $warning ?></td>
+				<td><?php echo img('/tango/dialog-warning.png') ?></td>
+				<td><?php echo $warning ?></td>
 			</tr>
 		</table>
 	</div>
-<? endif; ?>
+<?php endif; ?>
 
-<? if (!empty($notice)): ?>
+<?php if (!empty($notice)): ?>
 	<div class="dialog-notice">
 		<table>
 			<tr>
-				<td><?= img('/tango/dialog-information.png') ?></td>
-				<td><?= $notice ?></td>
+				<td><?php echo img('/tango/dialog-information.png'); ?></td>
+				<td><?php echo $notice; ?></td>
 			</tr>
 		</table>
 	</div>
-<? endif; ?>
+<?php endif; ?>

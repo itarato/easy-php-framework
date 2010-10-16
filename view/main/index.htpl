@@ -6,6 +6,6 @@ For more information visit <a href="http://www.bison.hu">http://www.bison.hu</a>
 </p>
 
 <p>
-Variable from controller: x = <?= $foo ?><br />
+Variable from controller: x = <?php echo $foo ?><br />
 To see some debug var, set DEBUG_MODE to TRUE in /setup.php.
 </p>

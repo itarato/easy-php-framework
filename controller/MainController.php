@@ -39,12 +39,11 @@ class MainController extends Controller {
 	}
 	
 	public function example() {
-		$this->user = UserModel::getUserData($_GET['id']);		
+    $user_id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+		$this->user = UserModel::getUserData($user_id);
 		empty($this->user->name) ? 
 			$this->warning = 'I can\' see any ID parameter in the URL:(' :
-			$this->notice = 'Great, I\'ve got an ID: '.$_GET['id'];
+			$this->notice = 'Great, I\'ve got an ID: ' . $user_id;
 			
 	}
 }
-
-?>
